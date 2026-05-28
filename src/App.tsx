@@ -10,6 +10,7 @@ export default function App() {
 
     audio.volume = 0.08;
     audio.loop = true;
+    audio.preload = "auto";
 
     audioRef.current = audio;
 
@@ -93,7 +94,6 @@ export default function App() {
         `}
       </style>
 
-      {/* BACKGROUND VIDEO */}
       <video
         autoPlay
         loop
@@ -113,7 +113,6 @@ export default function App() {
         <source src="/background.webm" type="video/webm" />
       </video>
 
-      {/* OVERLAY */}
       <div
         style={{
           position: "fixed",
@@ -124,7 +123,6 @@ export default function App() {
         }}
       />
 
-      {/* MAIN */}
       <div
         style={{
           position: "relative",
@@ -132,7 +130,6 @@ export default function App() {
           paddingBottom: "120px",
         }}
       >
-        {/* LOGO */}
         <div
           style={{
             display: "flex",
@@ -154,7 +151,6 @@ export default function App() {
           />
         </div>
 
-        {/* PRESENTATION */}
         <div
           style={{
             width: "760px",
@@ -203,7 +199,6 @@ export default function App() {
           </p>
         </div>
 
-        {/* SOCIAL BUTTONS */}
         <div
           style={{
             display: "flex",
@@ -290,7 +285,6 @@ export default function App() {
           </a>
         </div>
 
-        {/* TITLE */}
         <h2
           style={{
             textAlign: "center",
@@ -305,7 +299,6 @@ export default function App() {
           Gameplay Videos
         </h2>
 
-        {/* VIDEO PLAYER */}
         {selectedVideo && (
           <div
             style={{
@@ -322,7 +315,6 @@ export default function App() {
               position: "relative",
             }}
           >
-            {/* CLOSE BUTTON */}
             <button
               onClick={() => {
                 setSelectedVideo(null);
@@ -372,13 +364,14 @@ export default function App() {
               <video
                 controls
                 autoPlay
+                playsInline
                 onPlay={() => {
                   if (audioRef.current) {
                     audioRef.current.pause();
                   }
                 }}
                 onPause={() => {
-                  if (audioRef.current) {
+                  if (audioRef.current && selectedVideo === null) {
                     audioRef.current.play();
                   }
                 }}
@@ -398,13 +391,14 @@ export default function App() {
               <video
                 controls
                 autoPlay
+                playsInline
                 onPlay={() => {
                   if (audioRef.current) {
                     audioRef.current.pause();
                   }
                 }}
                 onPause={() => {
-                  if (audioRef.current) {
+                  if (audioRef.current && selectedVideo === null) {
                     audioRef.current.play();
                   }
                 }}
@@ -424,7 +418,6 @@ export default function App() {
           </div>
         )}
 
-        {/* EMBEDS */}
         <div
           style={{
             display: "flex",
@@ -435,7 +428,6 @@ export default function App() {
             padding: "0 20px",
           }}
         >
-          {/* LEAGUE */}
           <div
             style={cardStyle}
             onClick={() => setSelectedVideo("lol-local-video")}
@@ -471,7 +463,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* ME */}
           <div style={cardStyle}>
             <img
               src="/cozy.jpg"
@@ -523,7 +514,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* VALORANT */}
           <div
             style={cardStyle}
             onClick={() => setSelectedVideo("valo-local-video")}
@@ -560,7 +550,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* DONATION */}
         <div
           style={{
             display: "flex",
