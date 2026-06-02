@@ -346,7 +346,8 @@ export default function App() {
             </button>
 
             {(selectedVideo === "valo-local-video" ||
-              selectedVideo === "lol-local-video") && (
+              selectedVideo === "lol-local-video" ||
+              selectedVideo === "wwm-local-video") && (
               <div
                 style={{
                   textAlign: "center",
@@ -386,6 +387,28 @@ export default function App() {
                 }}
               >
                 <source src="/valo-display.mp4" type="video/mp4" />
+              </video>
+            ) : selectedVideo === "wwm-local-video" ? (
+              <video
+                controls
+                autoPlay
+                playsInline
+                onPlay={() => {
+                  if (audioRef.current) {
+                    audioRef.current.pause();
+                  }
+                }}
+                onEnded={() => {
+                  if (audioRef.current) {
+                    audioRef.current.play();
+                  }
+                }}
+                style={{
+                  width: "100%",
+                  borderRadius: "28px",
+                }}
+              >
+                <source src="/wwm-display.mp4" type="video/mp4" />
               </video>
             ) : selectedVideo === "lol-local-video" ? (
               <video
@@ -463,10 +486,11 @@ export default function App() {
             </div>
           </div>
 
-          <div style={cardStyle}>
+          <div style={cardStyle}
+            onClick={() => setSelectedVideo("wwm-local-video")}>
             <img
-              src="/cozy.jpg"
-              alt="Me"
+              src="/wwm.jpg"
+              alt="WWM"
               style={{
                 width: "100%",
                 height: "250px",
@@ -492,25 +516,10 @@ export default function App() {
                   fontFamily: "'Baloo 2', cursive",
                 }}
               >
-                🌸Me🌸
+                🌸WWM🌸
               </h3>
 
-              <div
-                style={{
-                  padding: "14px 26px",
-                  borderRadius: "999px",
-                  background:
-                    "linear-gradient(135deg, rgba(255,210,255,0.18), rgba(190,120,255,0.18))",
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  color: "#ffd9ff",
-                  fontSize: "22px",
-                  fontFamily: "'Baloo 2', cursive",
-                  boxShadow: "0 0 18px rgba(255,180,255,0.15)",
-                  backdropFilter: "blur(10px)",
-                }}
-              >
-                ✨ Coming soon... ✨
-              </div>
+              <button style={playButtonStyle}>▶</button>
             </div>
           </div>
 
