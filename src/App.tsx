@@ -191,8 +191,7 @@ export default function App() {
             <br />
             and support roles in most games.
             <br />
-            Feel free to add me, my name is put on display when u click on a
-            game u might be interested in and that I play.
+            Feel free to add me, my name is put on the display videos.
           </p>
         </div>
 
