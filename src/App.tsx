@@ -345,9 +345,20 @@ export default function App() {
               ✕
             </button>
 
-            {(selectedVideo === "valo-local-video" ||
-              selectedVideo === "lol-local-video" ||
-              selectedVideo === "wwm-local-video") && (
+            {selectedVideo === "wwm-local-video" ? (
+              <div
+                style={{
+                  textAlign: "center",
+                  color: "#ffd7ff",
+                  fontSize: "34px",
+                  marginBottom: "18px",
+                  fontFamily: "'Baloo 2', cursive",
+                }}
+              >
+                🌸 Where Winds Meet : AmyKitsu 🌸
+              </div>
+            ) : (selectedVideo === "valo-local-video" ||
+              selectedVideo === "lol-local-video") ? (
               <div
                 style={{
                   textAlign: "center",
@@ -359,7 +370,7 @@ export default function App() {
               >
                 🌸 Riot Games : Inari Okami#Amy 🌸
               </div>
-            )}
+            ) : null}
 
             {selectedVideo === "valo-local-video" ? (
               <video
