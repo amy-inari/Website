@@ -53,15 +53,12 @@ export default function App() {
   };
 
   const playButtonStyle = {
-    width: "85px",
-    height: "85px",
-    borderRadius: "999px",
-    background: "rgba(255,230,255,0.9)",
+    width: "95px",
+    height: "95px",
+    background: "none",
     border: "none",
-    fontSize: "34px",
-    color: "#fff",
     cursor: "pointer",
-    boxShadow: "0 0 22px rgba(255,200,255,0.35)",
+    padding: 0,
   };
 
   return (
@@ -493,7 +490,19 @@ export default function App() {
                 🌸League🌸
               </h3>
 
-              <button style={playButtonStyle}>▶</button>
+              <button style={playButtonStyle}>
+                <img
+                  src="/play-button.png"
+                  alt="Play"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    pointerEvents: "none",
+                    filter: "drop-shadow(0 0 18px rgba(255,180,255,0.45))",
+                  }}
+                />
+              </button>
             </div>
           </div>
 
@@ -530,7 +539,19 @@ export default function App() {
                 🌸WWM🌸
               </h3>
 
-              <button style={playButtonStyle}>▶</button>
+              <button style={playButtonStyle}>
+                <img
+                  src="/play-button.png"
+                  alt="Play"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    pointerEvents: "none",
+                    filter: "drop-shadow(0 0 18px rgba(255,180,255,0.45))",
+                  }}
+                />
+              </button>
             </div>
           </div>
 
@@ -565,7 +586,19 @@ export default function App() {
                 🌸Valorant🌸
               </h3>
 
-              <button style={playButtonStyle}>▶</button>
+              <button style={playButtonStyle}>
+                <img
+                  src="/play-button.png"
+                  alt="Play"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    pointerEvents: "none",
+                    filter: "drop-shadow(0 0 18px rgba(255,180,255,0.45))",
+                  }}
+                />
+              </button>
             </div>
           </div>
         </div>
