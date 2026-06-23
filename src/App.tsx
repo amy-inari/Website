@@ -256,7 +256,7 @@ export default function App() {
           </a>
 
           <a
-            href="https://discord.gg/zujPV3h4Ss"
+            href="https://discord.gg/H37WnmTqpx"
             target="_blank"
             rel="noopener noreferrer"
             style={{ textDecoration: "none" }}
